@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-let server;
+let server, port;
 
 const MongoClient = require('mongodb').MongoClient;
 const mongoUrl = `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.DB_NAME}`;
@@ -16,7 +16,7 @@ MongoClient.connect(mongoUrl)
         const debug = require('debug')('iosr-2017:server');
         const http = require('http');
 
-        const port = normalizePort(process.env.PORT || '3000');
+        port = normalizePort(process.env.PORT || '3000');
         app.set('port', port);
 
         server = http.createServer(app);
