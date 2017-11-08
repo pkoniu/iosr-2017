@@ -3,22 +3,8 @@ const express = require('express');
 module.exports = (mongodb) => {
     const app = express();
 
-    app.use('/orders', require('./routes/orders')(mongodb.collections('orders')));
-    
-    app.get('/', (req, res, next) => {
-        return mongodb.collection('users').find().toArray()
-            .then(usersDocs => {
-                return res.status(200).json(usersDocs);
-            }).catch(next);
-    });
-    
-    app.post('/', (req, res, next) => {
-        const newUser = req.body;
-        return mongodb.collection('users').insertOne(newUser)
-            .then(result => {
-                return res.status(201).json(result);
-            }).catch(next);
-    });
+    const clientsRepo = require('./repositories/clients')(mongodb.collection('clients'));
+    app.use('/clients', require('./routes/clients')(clientsRepo));
     
     return app;
 };
