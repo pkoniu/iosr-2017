@@ -2,6 +2,8 @@ const express = require('express');
 
 module.exports = (mongodb) => {
     const app = express();
+
+    app.use('/orders', require('./routes/orders')(mongodb.collections('orders')));
     
     app.get('/', (req, res, next) => {
         return mongodb.collection('users').find().toArray()
