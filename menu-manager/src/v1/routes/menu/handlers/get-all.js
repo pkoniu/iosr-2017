@@ -1,8 +1,8 @@
-module.exports = (ordersRepo) => {
+module.exports = (menuRepo) => {
     return (req, res, next) => {
-        return ordersRepo.getAll()
-            .then(orders => {
-                return res.status(200).json(orders);
+        return menuRepo.getAll()
+            .then(menuItems => {
+                return res.status(200).json(menuItems);
             }).catch(next);
     };
 };
