@@ -1,0 +1,12 @@
+[
+  {
+    "name": "coffee-beans",
+    "amount": 10000000,
+    "unit": "pieces"
+  },
+  {
+    "name": "milk",
+    "price": 999999,
+    "unit": "ml"
+  }
+]
