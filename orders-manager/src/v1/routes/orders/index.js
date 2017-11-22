@@ -10,4 +10,4 @@ module.exports = (ordersRepo) => {
     app.patch('/:id', require('./handlers/update-by-id')(ordersRepo));
 
     return app;
-}
+};
