@@ -7,6 +7,7 @@ module.exports = (ordersRepo) => {
     app.get('/:id', require('./handlers/get-by-id')(ordersRepo));
     app.post('/', require('./handlers/create-new')(ordersRepo));
     app.delete('/:id', require('./handlers/delete-by-id')(ordersRepo));
+    app.patch('/', require('./handlers/update-many')(ordersRepo))
     app.patch('/:id', require('./handlers/update-by-id')(ordersRepo));
 
     return app;

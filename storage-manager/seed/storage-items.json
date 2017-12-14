@@ -6,7 +6,7 @@
   },
   {
     "name": "milk",
-    "price": 999999,
+    "amount": 300,
     "unit": "ml"
   }
 ]

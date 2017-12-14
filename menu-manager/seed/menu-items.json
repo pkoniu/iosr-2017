@@ -5,12 +5,12 @@
     "ingredients": [
       {
         "name": "milk",
-        "amount": "120",
+        "amount": 120,
         "unit": "ml"
       },
       {
         "name": "coffee-beans",
-        "amount": "120",
+        "amount": 120,
         "unit": "pieces"
       }
     ]
@@ -21,7 +21,7 @@
     "ingredients": [
       {
         "name": "coffee-beans",
-        "amount": "240",
+        "amount": 240,
         "unit": "pieces"
       }
     ]

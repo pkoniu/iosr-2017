@@ -40,6 +40,10 @@ module.exports = (collection) => {
                     const updatedOrder = _.get(updateResponse, 'value', {});
                     return {updatedOrder};
                 });
+        },
+        findByNames(names){
+            const filter = queriesBuilder.getByNamesQuery(names);
+            return collection.find(filter).toArray()
         }
     };
 };
